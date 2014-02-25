@@ -1,3 +1,13 @@
+/**
+ * jQuery nextTo
+ *
+ * Basic usage:
+ * $('#positionMe').nextTo($('#target'), {position: 'bottom', shareBorder: 'right'});
+ *
+ * @author gillyb, Korri
+ * @version 0.1.1
+ * https://github.com/Korri/jQuery.nextTo
+ */
 (function ($) {
 	$.fn.nextTo = function (baseElement, options) {
 		if (this.length == 0) return false;
