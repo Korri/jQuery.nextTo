@@ -2,12 +2,7 @@
 	$.fn.nextTo = function (baseElement, options) {
 		if (this.length == 0) return false;
 
-		var settings = $.extend({
-			position: 'bottom', // bottom/top/right/left
-			shareBorder: 'right', // bottom/top/right/left
-			offsetX: 0,
-			offsetY: 0
-		}, options || {});
+		var settings = $.extend({}, $.fn.nextTo.defaults, options);
 
 		var looseElement = this,
 			baseOffset = baseElement.offset(),
@@ -64,5 +59,12 @@
 
 		//Actually change css
 		looseElement.css(css);
+	};
+
+	$.fn.nextTo.defaults = {
+		position: 'bottom', // bottom/top/right/left
+		shareBorder: 'right', // bottom/top/right/left
+		offsetX: 0,
+		offsetY: 0
 	};
 })(jQuery)
